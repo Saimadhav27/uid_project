@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TicketHub | Book Movies, Concerts, Sports & Live Events</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="stt.css"rel="stylesheet">
+</head>
+<body>
+<header>
+<div class="container header-content">
+<a href="#" class="logo">
+<i class="fas fa-ticket-alt"></i>
+<span>TicketHub</span>
+</a>
+<nav>
+<ul>
+<li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+<li><a href="#movies"><i class="fas fa-film"></i> Movies</a></li>
+<li><a href="#concerts"><i class="fas fa-music"></i> Concerts</a></li>
+<li><a href="#sports"><i class="fas fa-running"></i> Sports</a></li>
+<li><a href="#theater"><i class="fas fa-theater-masks"></i> Theater</a></li>
+<li><a href="#" onclick="openModal('helpModal')"><i class="fas fa-question-circle"></i> Help</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<section class="hero">
+<div class="container hero-content">
+<h1>Your Gateway to Unforgettable Experiences</h1>
+<p>Discover and book tickets for the hottest movies, concerts, sports events and more in your city</p>
+<div class="search-bar">
+  <input type="text" placeholder="Search for movies, concerts, sports, theater..." id="searchInput">
+  <button onclick="searchEvents()"><i class="fas fa-search"></i> Search Events</button>
+</div>
+<div id="searchResults"></div>
+
+</section>
+<main class="container">
+<div class="categories">
+<div class="category active" onclick="filterEvents('all')">
+<i class="fas fa-star category-icon"></i> All Events
+</div>
+</div>
+<div class="carousel-container">
+<h2 class="section-title">Featured Events</h2>
+<div class="featured-events">
+<div class="featured-card" onclick="openBookingModal(6, 'concerts')">
+<div class="featured-image" style="background-image: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=2070&amp;q=80')"></div>
+<div class="featured-content">
+<h3 class="featured-title">Summer Music Festival 2025</h3>
+<p class="featured-description">Join us for the biggest music festival of the year featuring top international artists across multiple stages.</p>
+<div class="featured-footer">
+<span class="event-price">From ₹2,500</span>
+<span class="event-rating"><i class="fas fa-star"></i> 4.8</span>
+</div>
+</div>
+</div>
+<div class="featured-card" onclick="openBookingModal(1, 'movies')">
+<div class="featured-image" style="background-image: url('https://images.unsplash.com/photo-1635805737707-575885ab0820?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=987&amp;q=80')"></div>
+<div class="featured-content">
+<h3 class="featured-title">Blockbuster Movie Week</h3>
+<p class="featured-description">Experience all the latest blockbuster movies with special discounts and early screenings.</p>
+<div class="featured-footer">
+<span class="event-price">From ₹200</span>
+<span class="event-rating"><i class="fas fa-star"></i> 4.5</span>
+</div>
+</div>
+</div>
+<div class="featured-card" onclick="openBookingModal(3, 'sports')">
+<div class="featured-image" style="background-image: url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1605&amp;q=80')"></div>
+<div class="featured-content">
+<h3 class="featured-title">International Cricket League</h3>
+<p class="featured-description">Witness the most exciting cricket matches featuring world-class players in your city stadium.</p>
+<div class="featured-footer">
+<span class="event-price">From ₹1,200</span>
+<span class="event-rating"><i class="fas fa-star"></i> 4.9</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="carousel-container" id="movies">
+<h2 class="section-title">
+Popular Movies
+<a href="#">View All <i class="fas fa-chevron-right"></i></a>
+</h2>
+<div class="carousel">
+<div class="event-card" onclick="openBookingModal(1, 'movies')">
+<div class="event-badge">New Release</div>
+<div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1635805737707-575885ab0820?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=987&amp;q=80')"></div>
+<div class="event-details">
+<h3 class="event-title">Superhero Adventure: Rise of Legends</h3>
+<div class="event-info">
+<i class="fas fa-calendar-alt"></i> <span>Now Showing - Multiple Dates</span>
+</div>
+<div class="event-info">
+<i class="fas fa-map-marker-alt"></i> <span>Cineplex Downtown, City Center</span>
+</div>
+<div class="event-price">
+<span>₹200 - ₹500</span>
+<span class="event-rating"><i class="fas fa-star"></i> 4.7</span>
+</div>
+<button class="book-btn"><i class="fas fa-ticket-alt"></i> Book Now</button>
+</div>
+</div>
+<div class="event-card" onclick="openBookingModal(2, 'movies')">
+<div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1025&amp;q=80')"></div>
+<div class="event-details">
+<h3 class="event-title">Romantic Nights: The Long Wait</h3>
+<div class="event-info">
+<i class="fas fa-calendar-alt"></i> <span>Now Showing - Multiple Dates</span>
+</div>
+<div class="event-info">
+<i class="fas fa-map-marker-alt"></i> <span>Starlight Cinemas, Westside</span>
+</div>
+<div class="event-price">
+<span>₹180 - ₹450</span>
+<span class="event-rating"><i class="fas fa-star"></i> 4.3</span>
+</div>
+<button class="book-btn"><i class="fas fa-ticket-alt"></i> Book Now</button>
+</div>
+</div>
+<div class="event-card" onclick="openBookingModal(3, 'movies')">
+<div class="event-badge">IMAX</div>
+<div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1574267432553-4b4628081c31?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1631&amp;q=80')"></div>
+<div class="event-details">
+<h3 class="event-title">Sci-Fi Odyssey: Beyond the Stars</h3>
+<div class="event-info">
+<i class="fas fa-calendar-alt"></i> <span>Now Showing - Multiple Dates</span>
+</div>
+<div class="event-info">
+<i class="fas fa-map-marker-alt"></i> <span>IMAX Theater, Mega Mall</span>
+</div>
+<div class="event-price">
+<span>₹300 - ₹700</span>
+<span class="event-rating"><i class="fas fa-star"></i> 4.8</span>
+</div>
+<button class="book-btn"><i class="fas fa-ticket-alt"></i> Book Now</button>
+</div>
+</div>
+<div class="event-card" onclick="openBookingModal(4, 'movies')">
+<div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1542204165-65bf26472b9b?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80')"></div>
+<div class="event-details">
+<h3 class="event-title">Action Thriller: Midnight Chase</h3>
+<div class="event-info">
+<i class="fas fa-calendar-alt"></i> <span>Now Showing - Multiple Dates</span>
+</div>
+<div class="event-info">
+<i class="fas fa-map-marker-alt"></i> <span>Grand Cinema, Riverside</span>
+</div>
+<div class="event-price">
+<span>₹220 - ₹550</span>
+<span class="event-rating"><i class="fas fa-star"></i> 4.6</span>
+</div>
+<button class="book-btn"><i class="fas fa-ticket-alt"></i> Book Now</button>
+</div>
+</div>
+</div>
+<div class="carousel-nav">
+<button id="prevMovies"><i class="fas fa-chevron-left"></i></button>
+<button id="nextMovies"><i class="fas fa-chevron-right"></i></button>
+</div>
+</div>
+<div class="carousel-container" id="concerts">
+<h2 class="section-title">
+Upcoming Concerts
+<a href="#">View All <i class="fas fa-chevron-right"></i></a>
+</h2>
+<div class="carousel">
+<div class="event-card" onclick="openBookingModal(5, 'concerts')">
+<div class="event-badge">Sold Out</div>
+<div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1501612780327-45045538702b?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=2070&amp;q=80')"></div>
+<div class="event-details">
+<h3 class="event-title">Global Pop Sensation Tour</h3>
+<div class="event-info">
+<i class="fas fa-calendar-alt"></i> <span>Sat, Jun 10, 2025 • 8:00 PM</span>
+</div>
+<div class="event-info">
+<i class="fas fa-map-marker-alt"></i> <span>City Arena, Downtown</span>
+</div>
+<div class="event-price">
+<span>₹3,500 - ₹12,000</span>
+<span class="event-rating"><i class="fas fa-star"></i> 4.9</span>
+</div>
+<button class="book-btn" disabled><i class="fas fa-ticket-alt"></i> Sold Out</button>
+</div>
+</div>
+<div class="event-card" onclick="openBookingModal(6, 'concerts')">
+<div class="event-badge">Limited Seats</div>
+<div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=2070&amp;q=80')"></div>
+<div class="event-details">
+<h3 class="event-title">Summer Music Festival 2025</h3>
+<div class="event-info">
+<i class="fas fa-calendar-alt"></i> <span>Fri-Sun, Jul 14-16, 2025</span>
+</div>
+<div class="event-info">
+<i class="fas fa-map-marker-alt"></i> <span>Riverside Park, Eastside</span>
+</div>
+<div class="event-price">
+<span>₹2,500 - ₹8,000</span>
+<span class="event-rating"><i class="fas fa-star"></i> 4.8</span>
+</div>
+<button class="book-btn"><i class="fas fa-ticket-alt"></i> Book Now</button>
+</div>
+</div>
+<div class="event-card" onclick="openBookingModal(7, 'concerts')">
+<div class="event-image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfMtdWzz5l6fcdFoUd5aJnsyGqMAcJBodJDA&s')"></div>
+<div class="event-details">
+<h3 class="event-title">Jazz & Blues Night</h3>
+<div class="event-info">
+<i class="fas fa-calendar-alt"></i> <span>Sat, Aug 5, 2025 • 7:30 PM</span>
+</div>
+<div class="event-info">
+<i class="fas fa-map-marker-alt"></i> <span>The Grand Hall, Arts District</span>
+</div>
+<div class="event-price">
+<span>₹1,500 - ₹4,000</span>
+<span class="event-rating"><i class="fas fa-star"></i> 4.6</span>
+</div>
+<button class="book-btn"><i class="fas fa-ticket-alt"></i> Book Now</button>
+</div>
+</div>
+<div class="event-card" onclick="openBookingModal(8, 'concerts')">
+<div class="event-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/30/8th_symphony_of_Mahler%2C_K%C3%B6lner_Philharmonie%2C_27-6-2009.JPG')"></div>
+<div class="event-details">
+<h3 class="event-title">Classical Symphony Orchestra</h3>
+<div class="event-info">
+<i class="fas fa-calendar-alt"></i> <span>Sun, Sep 3, 2025 • 6:00 PM</span>
+</div>
+<div class="event-info">
+<i class="fas fa-map-marker-alt"></i> <span>City Concert Hall, Cultural Center</span>
+</div>
+<div class="event-price">
+<span>₹1,000 - ₹5,000</span>
+<span class="event-rating"><i class="fas fa-star"></i> 4.7</span>
+</div>
+<button class="book-btn"><i class="fas fa-ticket-alt"></i> Book Now</button>
+</div>
+</div>
+</div>
+<div class="carousel-nav">
+<button id="prevConcerts"><i class="fas fa-chevron-left"></i></button>
+<button id="nextConcerts"><i class="fas fa-chevron-right"></i></button>
+</div>
+</div>
+<div class="carousel-container" id="sports">
+<h2 class="section-title">
+Live Sports
+<a href="#">View All <i class="fas fa-chevron-right"></i></a>
+</h2>
+<div class="carousel">
+<div class="event-card" onclick="openBookingModal(9, 'sports')">
+<div class="event-badge">Championship</div>
+<div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1605&amp;q=80')"></div>
+<div class="event-details">
+<h3 class="event-title">National Basketball Finals</h3>
+<div class="event-info">
+<i class="fas fa-calendar-alt"></i> <span>Sun, Jun 25, 2025 • 7:00 PM</span>
+</div>
+<div class="event-info">
+<i class="fas fa-map-marker-alt"></i> <span>Sports Dome, Northside</span>
+</div>
+<div class="event-price">
+<span>₹1,800 - ₹7,500</span>
+<span class="event-rating"><i class="fas fa-star"></i> 4.9</span>
+</div>
+<button class="book-btn"><i class="fas fa-ticket-alt"></i> Book Now</button>
+</div>
+</div>
+<div class="event-card" onclick="openBookingModal(10, 'sports')">
+<div class="event-image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0jHxUo-COXG-xKimPRtEsrbMHqN9I-26Jkg&s')"></div>
+<div class="event-details">
+<h3 class="event-title">Grand Tennis Open</h3>
+<div class="event-info">
+<i class="fas fa-calendar-alt"></i> <span>Mon-Sun, Jul 3-9, 2025</span>
+</div>
+<div class="event-info">
+<i class="fas fa-map-marker-alt"></i> <span>Tennis Club, Lakeside</span>
+</div>
+<div class="event-price">
+<span>₹800 - ₹3,000</span>
+<span class="event-rating"><i class="fas fa-star"></i> 4.7</span>
+</div>
+<button class="book-btn"><i class="fas fa-ticket-alt"></i> Book Now</button>
+</div>
+</div>
+<div class="event-card" onclick="openBookingModal(11, 'sports')">
+<div class="event-badge">Derby</div>
+<div class="event-image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfL1mnsKJP5J5602OmMpFFjZyaA7vhlxowQQ&s')"></div>
+<div class="event-details">
+<h3 class="event-title">City Marathon 2023</h3>
+<div class="event-info">
+<i class="fas fa-calendar-alt"></i> <span>Sat, Aug 19, 2025 • 6:00 AM</span>
+</div>
+<div class="event-info">
+<i class="fas fa-map-marker-alt"></i> <span>City Streets (Starts Downtown)</span>
+</div>
+<div class="event-price">
+<span>Free (Registration Required)</span>
+<span class="event-rating"><i class="fas fa-star"></i> 4.5</span>
+</div>
+<button class="book-btn"><i class="fas fa-ticket-alt"></i> Register Now</button>
+</div>
+</div>
+<div class="event-card" onclick="openBookingModal(12, 'sports')">
+<div class="event-image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkj9ATZ1-2aE085loNbUO0E8FBGTQzMFb6kw&s')"></div>
+<div class="event-details">
+<h3 class="event-title">Pro Wrestling Mania</h3>
+<div class="event-info">
+<i class="fas fa-calendar-alt"></i> <span>Fri, Sep 15, 2025 • 7:00 PM</span>
+</div>
+<div class="event-info">
+<i class="fas fa-map-marker-alt"></i> <span>Coliseum, Southside</span>
+</div>
+<div class="event-price">
+<span>₹500 - ₹2,500</span>
+<span class="event-rating"><i class="fas fa-star"></i> 4.2</span>
+</div>
+<button class="book-btn"><i class="fas fa-ticket-alt"></i> Book Now</button>
+</div>
+</div>
+</div>
+<div class="carousel-nav">
+<button id="prevSports"><i class="fas fa-chevron-left"></i></button>
+<button id="nextSports"><i class="fas fa-chevron-right"></i></button>
+</div>
+</div>
+<div class="carousel-container" id="theater">
+<h2 class="section-title">
+Theater & Arts
+<a href="#">View All <i class="fas fa-chevron-right"></i></a>
+</h2>
+<div class="carousel">
+<div class="event-card" onclick="openBookingModal(13, 'theater')">
+<div class="event-badge">Premiere</div>
+<div class="event-image" style="background-image: url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcREcn3KOZd3MsuzDuPeheMuxQUR3R_o5-wGk8pjBmx34t_ERxFAdnytyf8PIMoJF4ACpzz6lg')"></div>
+<div class="event-details">
+<h3 class="event-title">The Phantom of the Opera</h3>
+<div class="event-info">
+<i class="fas fa-calendar-alt"></i> <span>Multiple Dates, Starting Jul 1</span>
+</div>
+<div class="event-info">
+<i class="fas fa-map-marker-alt"></i> <span>Grand Opera House, Arts District</span>
+</div>
+<div class="event-price">
+<span>₹1,500 - ₹6,000</span>
+<span class="event-rating"><i class="fas fa-star"></i> 4.9</span>
+</div>
+<button class="book-btn"><i class="fas fa-ticket-alt"></i> Book Now</button>
+</div>
+</div>
+<div class="event-card" onclick="openBookingModal(14, 'theater')">
+<div class="event-image" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1_PzdpjJElONIjvYiYIbYszZ7w5nwXLonjw&s)"></div>
+<div class="event-details">
+<h3 class="event-title">Modern Art Exhibition: Future Visions</h3>
+<div class="event-info">
+<i class="fas fa-calendar-alt"></i> <span>Daily, Aug 1 - Aug 31, 2025</span>
+</div>
+<div class="event-info">
+<i class="fas fa-map-marker-alt"></i> <span>City Art Gallery, Cultural Center</span>
+</div>
+<div class="event-price">
+<span>₹500 (Entry Ticket)</span>
+<span class="event-rating"><i class="fas fa-star"></i> 4.7</span>
+</div>
+<button class="book-btn"><i class="fas fa-ticket-alt"></i> Buy Tickets</button>
+</div>
+</div>
+<div class="event-card" onclick="openBookingModal(15, 'theater')">
+<div class="event-badge">Limited Run</div>
+<div class="event-image" style="background-image: url('https://sheshineson.com/wp-content/uploads/2018/12/nutcracker-ballet-image-1200x739.jpg')"></div>
+<div class="event-details">
+<h3 class="event-title">The Nutcracker Ballet</h3>
+<div class="event-info">
+<i class="fas fa-calendar-alt"></i> <span>Dec 20 - Dec 30, 2025</span>
+</div>
+<div class="event-info">
+<i class="fas fa-map-marker-alt"></i> <span>Royal Theater, City Center</span>
+</div>
+<div class="event-price">
+<span>₹1,000 - ₹4,500</span>
+<span class="event-rating"><i class="fas fa-star"></i> 4.8</span>
+</div>
+<button class="book-btn"><i class="fas fa-ticket-alt"></i> Book Now</button>
+</div>
+</div>
+<div class="event-card" onclick="openBookingModal(16, 'theater')">
+<div class="event-image" style="background-image: url('https://www.hire4event.com/blogs/wp-content/uploads/2024/09/Best-Standup-Comedian-for-Corporate-Events-in-Delhi.jpg')"></div>
+<div class="event-details">
+<h3 class="event-title">Stand-Up Comedy Night Live</h3>
+<div class="event-info">
+<i class="fas fa-calendar-alt"></i> <span>Every Friday, 9:00 PM</span>
+</div>
+<div class="event-info">
+<i class="fas fa-map-marker-alt"></i> <span>The Laughter Club, Entertainment Zone</span>
+</div>
+<div class="event-price">
+<span>₹500 (Includes 1 drink)</span>
+<span class="event-rating"><i class="fas fa-star"></i> 4.6</span>
+</div>
+<button class="book-btn"><i class="fas fa-ticket-alt"></i> Book Tickets</button>
+</div>
+</div>
+</div>
+<div class="carousel-nav">
+<button id="prevTheater"><i class="fas fa-chevron-left"></i></button>
+<button id="nextTheater"><i class="fas fa-chevron-right"></i></button>
+</div>
+</div>
+</main>
+<section class="testimonials">
+<div class="container testimonial-container">
+<h2 class="testimonial-title">What Our <span>Customers Say</span></h2>
+<div class="testimonial-grid">
+<div class="testimonial-card">
+<p class="testimonial-text">"TicketHub made booking tickets incredibly easy and fast! I found the best seats for the concert without any hassle."</p>
+<div class="testimonial-author">
+<div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/men/32.jpg');"></div>
+<div class="author-info">
+<h4>John Doe</h4>
+<p>Concert Goer</p>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<p class="testimonial-text">"Amazing platform for discovering local events. I never knew there were so many cool shows happening around me!"</p>
+<div class="testimonial-author">
+<div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/women/44.jpg');"></div>
+<div class="author-info">
+<h4>Jane Smith</h4>
+<p>Event Enthusiast</p>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<p class="testimonial-text">"User-friendly interface and a wide variety of events. My go-to app for all entertainment bookings."</p>
+<div class="testimonial-author">
+<div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/men/50.jpg');"></div>
+<div class="author-info">
+<h4>Peter Jones</h4>
+<p>Sports Fan</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="newsletter">
+<div class="container">
+<h2>Stay Updated with TicketHub</h2>
+<p>Subscribe to our newsletter for exclusive offers, new event announcements, and more!</p>
+<div class="newsletter-form">
+<input type="email" placeholder="Enter your email address">
+<button><i class="fas fa-envelope"></i> Subscribe</button>
+</div>
+</div>
+</section>
+<footer>
+<div class="container footer-content">
+<div class="footer-column">
+<a href="#" class="logo">
+<i class="fas fa-ticket-alt"></i>
+<span>TicketHub</span>
+</a>
+<p>Your ultimate destination for booking tickets to movies, concerts, sports, and live events. Experience seamless booking and unforgettable moments.</p>
+<div class="social-links">
+<a href="https://www.facebook.com/tallam.madhav.3?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+<a href="https://x.com/t_saimadhav?t=zOHvb7mdqv2VfHh_4fUBUg&s=09"><i class="fab fa-twitter"></i></a>
+<a href="https://www.instagram.com/t_saimadhav?igsh=MXJhbDZ4YXZ4eWVv"><i class="fab fa-instagram"></i></a>
+<a href="https://www.linkedin.com/posts/sagili-dhanush-reddy-a91370334_queens-285-1247-first-s-activity-7294334525042556928-0PGf?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAFQPIQ0BsL98vwCN2kdbHfq5g90ULoAAPoM&utm_campaign=whatsapp "><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+<div class="footer-column">
+<h3>Quick Links</h3>
+<ul>
+<li><a href="contac.html">About Us</a></li>
+<li><a href="faq1.html">FAQs</a></li>
+<li><a href="privacy.html">Privacy Policy</a></li>
+<li><a href="terms.html">Terms of Service</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Categories</h3>
+<ul>
+<li><a href="#movies">Movies</a></li>
+<li><a href="#concerts">Concerts</a></li>
+<li><a href="#sports">Sports</a></li>
+<li><a href="#theater">Theater</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="copyright">
+<div class="container">
+&amp;copy; 2025 TicketHub. All Rights Reserved.
+</div>
+</div>
+</footer>
+
+<div id="login" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('login')">&times;</span>
+        <h2 class="modal-title">Login to Your Account</h2>
+        <form>
+            <div class="form-group">
+                <label for="loginEmail">Email Address</label>
+                <input type="email" id="loginEmail" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="submit-btn">Login</button>
+        </form>
+        <div class="switch-form">
+            Don't have an account? <a href="#" onclick="openModal('signup'); closeModal('login');">Sign Up</a>
+        </div>
+    </div>
+</div>
+
+<div id="signup" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('signup')">&times;</span>
+        <h2 class="modal-title">Create New Account</h2>
+        <form>
+            <div class="form-group">
+                <label for="signupName">Full Name</label>
+                <input type="text" id="signupName" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="signupEmail">Email Address</label>
+                <input type="email" id="signupEmail" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="signupPassword">Password</label>
+                <input type="password" id="signupPassword" placeholder="Create a password" required>
+            </div>
+            <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+        <div class="switch-form">
+            Already have an account? <a href="#" onclick="openModal('login'); closeModal('signup');">Login</a>
+        </div>
+    </div>
+</div>
+
+
+<div id="bookingModal" class="modal booking-modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('bookingModal')">&times;</span>
+        <h2 class="modal-title">Book Your Tickets</h2>
+        <div class="booking-header">
+            <div class="booking-image" id="bookingEventImage"></div>
+            <div class="booking-details">
+                <h3 class="booking-title" id="bookingEventTitle"></h3>
+                <div class="booking-info">
+                    <i class="fas fa-calendar-alt"></i> <span id="bookingEventDate"></span>
+                </div>
+                <div class="booking-info">
+                    <i class="fas fa-map-marker-alt"></i> <span id="bookingEventLocation"></span>
+                </div>
+                <div class="booking-price" id="bookingEventPrice"></div>
+            </div>
+        </div>
+        <form class="booking-form">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="emailAddress">Email Address</label>
+                <input type="email" id="emailAddress" placeholder="Enter your email" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="numTickets">Number of Tickets</label>
+                    <input type="number" id="numTickets" value="1" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="ticketType">Ticket Type</label>
+                    <select id="ticketType">
+                        <option value="standard">Standard</option>
+                        <option value="premium">Premium</option>
+                        <option value="vip">VIP</option>
+                    </select>
+                </div>
+            </div>
+            <div class="payment-section">
+                <h3>Choose Payment Method</h3>
+                <div class="form-group">
+                    <label for="paymentMethod">Select Method</label>
+                    <select id="paymentMethod" required>
+                        <option value="">-- Please Select --</option>
+                        <option value="credit-card">Credit Card</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="upi">UPI (India)</option>
+                        <option value="net-banking">Net Banking (India)</option>
+                    </select>
+                </div>
+
+                <div id="creditCardDetails" class="payment-details-group" style="display: none;">
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" id="cardNumber" placeholder="•••• •••• •••• ••••" maxlength="19">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiryDate">Expiry Date</label>
+                            <input type="text" id="expiryDate" placeholder="MM/YY" maxlength="5">
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" placeholder="CVV" maxlength="4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="submit-btn" id="book-now-modal-btn">
+                <i class="fas fa-ticket-alt"></i> Confirm Booking
+            </button>
+        </form>
+    </div>
+</div>
+
+<div class="booking-form">
+    <h2>Book Your Tickets</h2>
+    <form id="bookingForm">
+        <input type="text" id="eventName" placeholder="Event Name" value="Summer Concert">
+        <input type="date" id="eventDate" value="2023-07-15">
+        <input type="time" id="eventTime" value="19:00">
+        <input type="number" id="ticketCount" placeholder="Number of Tickets" value="2" min="1">
+        <input type="text" id="totalPrice" placeholder="Total Price" value="50.00" readonly>
+        <input type="text" id="customerName" placeholder="Your Name" value="John Doe">
+        <button type="button" onclick="confirmBooking()">Confirm Booking</button>
+    </form>
+</div>
+
+<!-- Confirmation Modal -->
+<div id="confirmationModal" class="modal">
+    <div class="modal-content confirmation">
+        <i class="fas fa-check-circle success-icon"></i>
+        <h2>Booking Confirmed!</h2>
+        <p>Your tickets have been successfully booked.</p>
+        <p>Your booking reference is: <span class="booking-ref" id="bookingReference"></span></p>
+        <p>An email with your ticket details has been sent to your registered email address.</p>
+        <div class="action-buttons">
+            <button class="primary-btn" onclick="closeModal('confirmationModal')">Continue Browse</button>
+            <button class="secondary-btn" onclick="viewMyBookings()">View My Bookings</button>
+        </div>
+    </div>
+</div>
+
+<!-- Booking History Modal -->
+<div id="bookingHistoryModal" class="modal">
+    <div class="modal-content history">
+        <span class="close" onclick="closeModal('bookingHistoryModal')">&times;</span>
+        <h2>My Booking History</h2>
+        <div id="bookingHistoryTableContainer">
+            <!-- Table will be inserted here by JavaScript -->
+        </div>
+        <div class="action-buttons">
+            <button class="primary-btn" onclick="closeModal('bookingHistoryModal')">Close</button>
+        </div>
+    </div>
+</div>
+
+<script>
+   
+    const eventsData = {
+        movies: {
+            1: { title: 'Superhero Adventure: Rise of Legends', date: 'Now Showing - Multiple Dates', location: 'Cineplex Downtown, City Center', price: '₹200 - ₹500', image: 'https://images.unsplash.com/photo-1635805737707-575885ab0820?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80' },
+            2: { title: 'Romantic Nights: The Long Wait', date: 'Now Showing - Multiple Dates', location: 'Starlight Cinemas, Westside', price: '₹180 - ₹450', image: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80' },
+            3: { title: 'Sci-Fi Odyssey: Beyond the Stars', date: 'Now Showing - Multiple Dates', location: 'IMAX Theater, Mega Mall', price: '₹300 - ₹700', image: 'https://images.unsplash.com/photo-1574267432553-4b4628081c31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1631&q=80' },
+            4: { title: 'Action Thriller: Midnight Chase', date: 'Now Showing - Multiple Dates', location: 'Grand Cinema, Riverside', price: '₹220 - ₹550', image: 'https://images.unsplash.com/photo-1542204165-65bf26472b9b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80' },
+        },
+        concerts: {
+            5: { title: 'Global Pop Sensation Tour', date: 'Sat, Jun 10, 2023 • 8:00 PM', location: 'City Arena, Downtown', price: '₹3,500 - ₹12,000', image: 'https://images.unsplash.com/photo-1501612780327-45045538702b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80' },
+            6: { title: 'Summer Music Festival 2023', date: 'Fri-Sun, Jul 14-16, 2023', location: 'Riverside Park, Eastside', price: '₹2,500 - ₹8,000', image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80' },
+            7: { title: 'Jazz & Blues Night', date: 'Sat, Aug 5, 2023 • 7:30 PM', location: 'The Grand Hall, Arts District', price: '₹1,500 - ₹4,000', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfMtdWzz5l6fcdFoUd5aJnsyGqMAcJBodJDA&s' },
+            8: { title: 'Classical Symphony Orchestra', date: 'Sun, Sep 3, 2023 • 6:00 PM', location: 'City Concert Hall, Cultural Center', price: '₹1,000 - ₹5,000', image: 'https://upload.wikimedia.org/wikipedia/commons/3/30/8th_symphony_of_Mahler%2C_K%C3%B6lner_Philharmonie%2C_27-6-2009.JPG' },
+        },
+        sports: {
+            9: { title: 'National Basketball Finals', date: 'Sun, Jun 25, 2023 • 7:00 PM', location: 'Sports Dome, Northside', price: '₹1,800 - ₹7,500', image: 'https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1605&q=80' },
+            10: { title: 'Grand Tennis Open', date: 'Mon-Sun, Jul 3-9, 2023', location: 'Tennis Club, Lakeside', price: '₹800 - ₹3,000', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0jHxUo-COXG-xKimPRtEsrbMHqN9I-26Jkg&s' },
+            11: { title: 'City Marathon 2023', date: 'Sat, Aug 19, 2023 • 6:00 AM', location: 'City Streets (Starts Downtown)', price: 'Free (Registration Required)', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfL1mnsKJP5J5602OmMpFFjZyaA7vhlxowQQ&s' },
+            12: { title: 'Pro Wrestling Mania', date: 'Fri, Sep 15, 2023 • 7:00 PM', location: 'Coliseum, Southside', price: '₹500 - ₹2,500', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkj9ATZ1-2aE085loNbUO0E8FBGTQzMFb6kw&s' },
+        },
+        theater: {
+            13: { title: 'The Phantom of the Opera', date: 'Multiple Dates, Starting Jul 1', location: 'Grand Opera House, Arts District', price: '₹1,500 - ₹6,000', image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcREcn3KOZd3MsuzDuPeheMuxQUR3R_o5-wGk8pjBmx34t_ERxFAdnytyf8PIMoJF4ACpzz6lg' },
+            14: { title: 'Modern Art Exhibition: Future Visions', date: 'Daily, Aug 1 - Aug 31, 2023', location: 'City Art Gallery, Cultural Center', price: '₹500 (Entry Ticket)', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1_PzdpjJElONIjvYiYIbYszZ7w5nwXLonjw&s' },
+            15: { title: 'The Nutcracker Ballet', date: 'Dec 20 - Dec 30, 2023', location: 'Royal Theater, City Center', price: '₹1,000 - ₹4,500', image: 'https://sheshineson.com/wp-content/uploads/2018/12/nutcracker-ballet-image-1200x739.jpg' },
+            16: { title: 'Stand-Up Comedy Night Live', date: 'Every Friday, 9:00 PM', location: 'The Laughter Club, Entertainment Zone', price: '₹500 (Includes 1 drink)', image: 'https://www.hire4event.com/blogs/wp-content/uploads/2024/09/Best-Standup-Comedian-for-Corporate-Events-in-Delhi.jpg' },
+        }
+    };
+document.addEventListener('DOMContentLoaded', function() {
+    const paymentMethodSelect = document.getElementById('paymentMethod');
+    const creditCardDetails = document.getElementById('creditCardDetails');
+
+    paymentMethodSelect.addEventListener('change', function() {
+        const allPaymentDetailsGroups = document.querySelectorAll('.payment-details-group');
+        allPaymentDetailsGroups.forEach(group => group.style.display = 'none');
+
+        document.getElementById('cardNumber').removeAttribute('required');
+        document.getElementById('expiryDate').removeAttribute('required');
+        document.getElementById('cvv').removeAttribute('required');
+
+        if (this.value === 'credit-card') {
+            creditCardDetails.style.display = 'block';
+            document.getElementById('cardNumber').setAttribute('required', 'required');
+            document.getElementById('expiryDate').setAttribute('required', 'required');
+            document.getElementById('cvv').setAttribute('required', 'required');
+        }
+    });
+
+    document.getElementById('book-now-modal-btn').addEventListener('click', function() {
+        const fullName = document.getElementById('fullName').value;
+        const emailAddress = document.getElementById('emailAddress').value;
+        const numTickets = document.getElementById('numTickets').value;
+        const ticketType = document.getElementById('ticketType').value;
+        const paymentMethod = document.getElementById('paymentMethod').value;
+
+        if (!fullName || !emailAddress || !numTickets || !ticketType || !paymentMethod) {
+            alert('Please fill in all required booking and payment details.');
+            return;
+        }
+
+        if (paymentMethod === 'credit-card') {
+            const cardNumber = document.getElementById('cardNumber').value;
+            const expiryDate = document.getElementById('expiryDate').value;
+            const cvv = document.getElementById('cvv').value;
+            if (!cardNumber || !expiryDate || !cvv) {
+                alert('Please fill in all credit card details.');
+                return;
+            }
+        }
+
+        const bookingData = {
+            eventTitle: document.getElementById('bookingEventTitle').textContent,
+            eventDate: document.getElementById('bookingEventDate').textContent,
+            eventLocation: document.getElementById('bookingEventLocation').textContent,
+            eventPrice: document.getElementById('bookingEventPrice').textContent,
+            fullName: fullName,
+            emailAddress: emailAddress,
+            numTickets: numTickets,
+            ticketType: ticketType,
+            paymentMethod: paymentMethod
+        };
+
+        if (paymentMethod === 'credit-card') {
+            bookingData.cardDetails = {
+                cardNumber: document.getElementById('cardNumber').value,
+                expiryDate: document.getElementById('expiryDate').value,
+                cvv: document.getElementById('cvv').value
+            };
+        }
+
+        console.log('Booking Data:', bookingData);
+        alert('Booking confirmed!');
+    });
+});
+
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+}
+
+function openBookingModal(eventData) {
+    document.getElementById('bookingEventImage').style.backgroundImage = `url(${eventData.image})`;
+    document.getElementById('bookingEventTitle').textContent = eventData.title;
+    document.getElementById('bookingEventDate').textContent = eventData.date;
+    document.getElementById('bookingEventLocation').textContent = eventData.location;
+    document.getElementById('bookingEventPrice').textContent = eventData.price;
+
+    document.getElementById('bookingModal').style.display = 'block';
+}
+  // Booking System JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize with sample data if localStorage is empty
+    if (!localStorage.getItem('bookings')) {
+        initializeSampleBookings();
+    }
+});
+
+// Modal functions
+function openModal(modalId) {
+    document.getElementById(modalId).style.display = 'block';
+}
+
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+}
+
+// Booking functions
+function confirmBooking() {
+    // Generate a booking reference
+    const bookingRef = 'BKNG-' + Math.random().toString(36).substr(2, 8).toUpperCase();
+    document.getElementById('bookingReference').textContent = bookingRef;
+    
+    // Get form data (replace with your actual form fields)
+    const bookingData = {
+        reference: bookingRef,
+        eventName: document.getElementById('eventName')?.value || "Sample Event",
+        eventDate: document.getElementById('eventDate')?.value || "2023-12-15",
+        eventTime: document.getElementById('eventTime')?.value || "19:00",
+        ticketCount: parseInt(document.getElementById('ticketCount')?.value) || 2,
+        totalPrice: parseFloat(document.getElementById('totalPrice')?.value) || 50.00,
+        customerName: document.getElementById('customerName')?.value || "Guest User",
+        bookingDate: new Date().toISOString().split('T')[0]
+    };
+    
+    // Save the booking
+    saveBookingToStorage(bookingData);
+    
+    // Show confirmation modal
+    openModal('confirmationModal');
+}
+
+function viewMyBookings() {
+    closeModal('confirmationModal');
+    displayBookingHistory();
+    openModal('bookingHistoryModal');
+}
+
+function displayBookingHistory() {
+    const container = document.getElementById('bookingHistoryTableContainer');
+    const bookings = getBookingsFromStorage();
+    
+    if (bookings.length === 0) {
+        container.innerHTML = '<p class="no-bookings">No bookings found.</p>';
+        return;
+    }
+    
+    const tableHtml = `
+        <table class="booking-history-table">
+            <thead>
+                <tr>
+                    <th>Booking Ref</th>
+                    <th>Event</th>
+                    <th>Event Date</th>
+                    <th>Tickets</th>
+                    <th>Total</th>
+                    <th>Booked On</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${bookings.map(booking => `
+                    <tr>
+                        <td>${booking.reference}</td>
+                        <td>${booking.eventName}</td>
+                        <td>${formatDate(booking.eventDate)} ${booking.eventTime || ''}</td>
+                        <td>${booking.ticketCount}</td>
+                        <td>$${booking.totalPrice.toFixed(2)}</td>
+                        <td>${formatDate(booking.bookingDate)}</td>
+                        <td>
+                            <button class="view-btn" onclick="viewBookingDetails('${booking.reference}')">View</button>
+                            <button class="cancel-btn" onclick="cancelBooking('${booking.reference}')">Cancel</button>
+                        </td>
+                    </tr>
+                `).join('')}
+            </tbody>
+        </table>
+    `;
+    
+    container.innerHTML = tableHtml;
+}
+
+function viewBookingDetails(reference) {
+    const bookings = getBookingsFromStorage();
+    const booking = bookings.find(b => b.reference === reference);
+    
+    if (booking) {
+        alert(`Booking Details:\n
+Reference: ${booking.reference}
+Event: ${booking.eventName}
+Date: ${formatDate(booking.eventDate)} ${booking.eventTime || ''}
+Tickets: ${booking.ticketCount}
+Total: $${booking.totalPrice.toFixed(2)}
+Customer: ${booking.customerName || 'Not specified'}
+Booked On: ${formatDate(booking.bookingDate)}`);
+    }
+}
+
+function cancelBooking(reference) {
+    if (confirm('Are you sure you want to cancel this booking?')) {
+        const bookings = getBookingsFromStorage();
+        const updatedBookings = bookings.filter(b => b.reference !== reference);
+        localStorage.setItem('bookings', JSON.stringify(updatedBookings));
+        displayBookingHistory(); // Refresh the display
+    }
+}
+
+// Storage functions
+function getBookingsFromStorage() {
+    const bookingsJson = localStorage.getItem('bookings');
+    return bookingsJson ? JSON.parse(bookingsJson) : [];
+}
+
+function saveBookingToStorage(bookingData) {
+    const bookings = getBookingsFromStorage();
+    bookings.push(bookingData);
+    localStorage.setItem('bookings', JSON.stringify(bookings));
+}
+
+function initializeSampleBookings() {
+    const sampleBookings = [
+        {
+            reference: 'BKNG-7A9B3C4D',
+            eventName: 'Summer Music Festival',
+            eventDate: '2023-07-15',
+            eventTime: '18:00',
+            ticketCount: 2,
+            totalPrice: 120.00,
+            customerName: 'John Doe',
+            bookingDate: '2023-06-10'
+        },
+        {
+            reference: 'BKNG-5E6F7G8H',
+            eventName: 'Tech Conference',
+            eventDate: '2023-08-20',
+            eventTime: '09:30',
+            ticketCount: 1,
+            totalPrice: 199.99,
+            customerName: 'Jane Smith',
+            bookingDate: '2023-06-05'
+        }
+    ];
+    localStorage.setItem('bookings', JSON.stringify(sampleBookings));
+}
+
+// Helper functions
+function formatDate(dateString) {
+    if (!dateString) return 'N/A';
+    const options = { year: 'numeric', month: 'short', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString('en-US', options);
+}
+
+// Close modals when clicking outside
+window.onclick = function(event) {
+    if (event.target.className === 'modal') {
+        event.target.style.display = 'none';
+    }
+};
+   
+      function searchEvents() {
+    const input = document.getElementById("searchInput").value.toLowerCase().trim();
+
+    if (!input) {
+      alert("Please enter a search term.");
+      return;
+    }
+
+    const sections = ["movies", "concerts", "sports", "theater"];
+
+    if (sections.includes(input)) {
+      const targetSection = document.getElementById(input);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      alert("No matching category found. Try searching for: movies, concerts, sports, theater.");
+    }
+}
+      
+
+    
+    function filterEvents(category) {
+       
+        document.querySelectorAll('.category').forEach(tab => {
+            tab.classList.remove('active');
+        });
+        event.target.classList.add('active');
+
+        alert(`Filtering by: ${category}`);
+       
+    }
+
+    function setupCarousel(carouselId, prevBtnId, nextBtnId) {
+        const carousel = document.querySelector(`#${carouselId} .carousel`);
+        const prevBtn = document.getElementById(prevBtnId);
+        const nextBtn = document.getElementById(nextBtnId);
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                carousel.scrollBy({ left: -300, behavior: 'smooth' });
+            });
+        }
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                carousel.scrollBy({ left: 300, behavior: 'smooth' });
+            });
+        }
+    }
+    function openBookingModal(eventId, eventCategory) {
+        const event = eventsData[eventCategory][eventId];
+        if (event) {
+            document.getElementById('bookingEventImage').style.backgroundImage = `url('${event.image}')`;
+            document.getElementById('bookingEventTitle').innerText = event.title;
+            document.getElementById('bookingEventDate').innerText = event.date;
+            document.getElementById('bookingEventLocation').innerText = event.location;
+            document.getElementById('bookingEventPrice').innerText = `Price: ${event.price}`;
+            openModal('bookingModal');
+        } else {
+            alert('Event details not found.');
+        }
+    }
+    function submitBooking() {
+        const fullName = document.getElementById('fullName').value;
+        const emailAddress = document.getElementById('emailAddress').value;
+        const numTickets = document.getElementById('numTickets').value;
+        const ticketType = document.getElementById('ticketType').value;
+        if (fullName && emailAddress && numTickets > 0) {
+            const bookingRef = 'TH' + Math.random().toString(36).substr(2, 9).toUpperCase();
+            closeModal('bookingModal');
+            showConfirmationModal(bookingRef);
+            console.log('Booking details:', {
+                fullName,
+                emailAddress,
+                numTickets,
+                ticketType,
+                bookingRef
+            });
+        } else {
+            alert('Please fill in all booking details.');
+        }
+    }
+    function showConfirmationModal(bookingRef) {
+        document.getElementById('bookingReference').innerText = bookingRef;
+        openModal('confirmationModal');
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        setupCarousel('movies', 'prevMovies', 'nextMovies');
+        setupCarousel('concerts', 'prevConcerts', 'nextConcerts');
+        setupCarousel('sports', 'prevSports', 'nextSports');
+        setupCarousel('theater', 'prevTheater', 'nextTheater');
+        document.getElementById('book-now-modal-btn').addEventListener('click', submitBooking);
+    });
+</script>
+</body>
+</html>
