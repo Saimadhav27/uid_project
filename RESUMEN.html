@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F8F8FF;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            background: white;
+            margin: 20px auto;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .section {
+            padding: 20px;
+            border-bottom: 1px solid white;
+            background-color: whitesmoke;
+            margin-bottom: 20px;
+        }
+
+            h1 {
+                color: #000000;
+                text-align: center;
+            }
+
+            h2 {
+                color: #191970;
+                text-align: center;
+            }
+    h3 {
+        transform: translateX(-100px);
+        font-size: 35px;
+        color: #708090;
+        text-align: left;
+    }
+    .profile {
+        display: flex;
+        text-align: left;
+    }
+    @media (max-width: 750px) {
+        h3 {
+            transform: translateX(0);
+            text-align: center;
+        }
+        .profile{
+            display: block;
+        }
+    }
+    .pfp {
+        display: flex;
+        margin: 0 auto;
+        border: 2px solid #000000;
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+    }
+    ul, ol {
+        padding-left: 20px;
+    }
+    .contact a {
+        color: #191970;
+        text-decoration: none;
+    }
+    footer {
+        text-align: center;
+        padding: 5px;
+        background: #000000;
+        color: white;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>RESUME</h1>
+        <div class="profile">
+            <img src="madhav.jpg" class="pfp">
+            <h3>T SAI MADHAV<br>AM.SC.U4AIE24050</h3>
+        </div>
+        <div class="section">
+            <h2>Summary</h2>
+            <p>Motivated under graduate with a Bachelor of Technology in Computer Science from Amrita Vishwa Vidyapeetham.
+                Possesses strong analytical and problem-solving skills, along with a solid foundation in software development and web technologies.
+                Eager to contribute to a challenging and innovative environment where I can learn and grow professionally.</p>
+        </div>
+        <div class="section">
+            <h2>Education</h2>
+            <ul>
+                <li>Bachelor of Science in Computer Science | Amrita University | July 2024</li>
+                <li>GPA: 8.25</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Skills</h2>
+            <ul>
+                <li>Programming: C, JAVA, HTML, Data Structures</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Hobbies</h2>
+            <ul>
+                <li>Reading</li>
+                <li>Drawing</li>
+                <li>Anime</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Contact Details</h2>
+            <ul class="contact">
+                <li>Phone: +91 99666 XXXXX</li>
+                <li><a href="mailto:saimadhavtallam@gmail.com">saimadhavtallam@gmail.com</a> Mail me</li>
+                            <li><a href="https://www.linkedin.com/in/sai-madhav-b04410320/">LinkedIn</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 T.SAI MADHAV. All Rights Reserved</p>
+    </footer>
+</body>
+</html>
+

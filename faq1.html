@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FAQs - Ticket Booking System</title>
+  <link rel="stylesheet" href="stt.css">
+  <style>
+    .faq-container {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .faq h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .faq-item {
+      background: #fff;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 15px;
+      background: #f4f4f4;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 15px;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+<header>
+<div class="container header-content">
+<a href="#" class="logo">
+<i class="fas fa-ticket-alt"></i>
+<span>TicketHub</span>
+</a>
+<nav>
+<ul>
+<li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+<li><a href="#movies"><i class="fas fa-film"></i> Movies</a></li>
+<li><a href="#concerts"><i class="fas fa-music"></i> Concerts</a></li>
+<li><a href="#sports"><i class="fas fa-running"></i> Sports</a></li>
+<li><a href="#theater"><i class="fas fa-theater-masks"></i> Theater</a></li>
+<li><a href="#" onclick="openModal('helpModal')"><i class="fas fa-question-circle"></i> Help</a></li>
+</ul>
+</nav>
+<div class="auth-buttons">
+<button class="login-btn" onclick="openModal('login')"><i class="fas fa-sign-in-alt"></i> Login</button>
+<button class="signup-btn" onclick="openModal('signup')"><i class="fas fa-user-plus"></i> Sign Up</button>
+</div>
+</div>
+</header>
+ 
+  <!-- FAQ Section -->
+  <section class="faq">
+    <div class="faq-container">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">1. How do I book a ticket?</div>
+        <div class="faq-answer">Go to the "Book Tickets" page, select an event, fill out the form, and confirm your booking.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">2. Can I cancel my ticket?</div>
+        <div class="faq-answer">Yes, you can cancel your ticket through your booking history page within 24 hours of booking.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">3. What payment methods are accepted?</div>
+        <div class="faq-answer">We accept credit/debit cards, UPI, and net banking.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">4. How do I receive my ticket?</div>
+        <div class="faq-answer">Your ticket will be sent to your registered email ID after successful payment.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 TicketMaster. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleAnswer(element) {
+      const answer = element.nextElementSibling;
+      answer.style.display = answer.style.display === "block" ? "none" : "block";
+    }
+  </script>
+
+</body>
+</html>

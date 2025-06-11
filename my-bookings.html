@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Bookings</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .booking { border: 1px solid #ccc; padding: 15px; margin-bottom: 15px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+
+  <h1>My Booking History</h1>
+  <div id="bookingList"></div>
+
+  <script>
+    const bookings = JSON.parse(localStorage.getItem('bookingHistory')) || [];
+    const bookingList = document.getElementById('bookingList');
+
+    if (bookings.length === 0) {
+      bookingList.innerHTML = '<p>No bookings found.</p>';
+    } else {
+      bookings.forEach(b => {
+        const div = document.createElement('div');
+        div.className = 'booking';
+        div.innerHTML = `
+          <strong>Reference:</strong> ${b.ref}<br>
+          <strong>Movie:</strong> ${b.movie}<br>
+          <strong>Seat:</strong> ${b.seat}<br>
+          <strong>Date:</strong> ${b.date}<br>
+          <strong>Time:</strong> ${b.time}<br>
+          <strong>Booked At:</strong> ${b.bookedAt}
+        `;
+        bookingList.appendChild(div);
+      });
+    }
+  </script>
+
+</body>
+</html>

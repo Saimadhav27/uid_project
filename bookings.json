@@ -1,0 +1,22 @@
+[
+  {
+    "reference": "BKNG12345",
+    "eventName": "Summer Music Festival",
+    "eventDate": "2023-07-15",
+    "eventTime": "18:00",
+    "ticketCount": 2,
+    "totalPrice": 120.00,
+    "customerName": "John Doe",
+    "customerEmail": "john@example.com"
+  },
+  {
+    "reference": "BKNG67890",
+    "eventName": "Tech Conference",
+    "eventDate": "2023-08-20",
+    "eventTime": "09:30",
+    "ticketCount": 1,
+    "totalPrice": 199.99,
+    "customerName": "Jane Smith",
+    "customerEmail": "jane@example.com"
+  }
+]
