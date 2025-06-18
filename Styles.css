@@ -1,0 +1,109 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    background-color: lightgreen;
+}
+@media (max-width: 600px) {
+    body {
+        background-color: lightcoral;
+    }
+}
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+h1 {
+    text-align: center;
+    color: black;
+}
+h2 {
+    color:green;
+    padding-bottom: 5px;
+}
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    display: block;
+    margin: 20px auto;
+    border: 4px solid black;
+}
+.highlight {
+    color: darkred;
+    font-weight: bold;
+}
+.k {
+    display: inline-block;
+    background: darkred;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background: black;
+    color: white;
+    font-size: 14px;
+}
+table {
+    background-color: lightgray;
+    border-collapse: collapse;
+    width: 100%;
+}
+td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: purple;
+    color: white;
+    text-align: left;
+}
+.about {
+    background-color: gainsboro;
+    padding: 15px;
+    border-radius: 10px;
+}
+.education {
+    background-color: lightcyan;
+    padding: 15px;
+    border-radius: 10px;
+}
+.skills {
+    background-color: khaki;
+    padding: 15px;
+    border-radius: 10px;
+}
+.soft-skills {
+    background-color: palegreen;
+    padding: 15px;
+    border-radius: 10px;
+}
+.projects {
+    background-color: lightpink;
+    padding: 15px;
+    border-radius: 10px;
+}
+.contact {
+    background-color: thistle;
+    padding: 15px;
+    border-radius: 10px;
+}
+.interests {
+    background-color: gainsboro;
+    padding: 15px;
+    border-radius: 10px;
+}
