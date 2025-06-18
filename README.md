@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/0afa59a5-d84c-4576-875e-0d022b109abd)names 
+names 
 1)dhanush reddy
 2)guru yaswanth
 3)madhav 
